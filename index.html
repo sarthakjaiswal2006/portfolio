@@ -1,94 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sarthak Jaiswal — Full Stack Developer & DSA Enthusiast based in India." />
+  <title>Sarthak Jaiswal — Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <nav id="nav-bar">
-        <div id="tools"> 
-            <a class="anchors" href="#">About</a>
-            <a class="anchors" href="#PROJECTS">Projects</a>
-            <a class="anchors" href="#contacts">Contact</a> 
-            <button id="resume">Resume</button>   
-            <button id="change-mode">Light</button> 
-        </div> 
-    </nav>  
-    <div id="about">
-        <div id="intro">
-            <h1 id="name">Hello, I am</h1> 
-            <h2 id="introduction">SARTHAK JAISWAL</h2> 
-            <h2 id="role"></h2>
-        </div> 
-        <div id="img"> 
-            <img style="width: 100%;height: 100%;" src="./BITMOJI.png">
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <nav id="nav-bar">
+    <div id="tools">
+      <a class="anchors" href="#about">About</a>
+      <a class="anchors" href="#PROJECTS">Projects</a>
+      <a class="anchors" href="#tech-stack">Skills</a>
+      <a class="anchors" href="#contacts">Contact</a>
+      <button id="resume" onclick="window.open('#')">Resume</button>
+      <button id="change-mode">Dark</button>
+    </div>
+  </nav>
+  <section id="about">
+    <div id="intro">
+      <p id="name">
+        <span class="name-dot"></span>
+        Available for work · 2025
+      </p>
+      <h1 id="introduction">
+        Hello, I'm<br />
+        <em>Sarthak.</em>
+      </h1>
+      <p id="role-wrap">
+        <span id="role"></span><span class="cursor">|</span>
+      </p>
+
+      <p id="hero-sub">
+        Full Stack Developer & DSA Enthusiast building fast,
+        accessible, and thoughtful web experiences.
+      </p>
+
+      <div id="hero-actions">
+        <a href="#PROJECTS" class="btn btn-primary">View My Work</a>
+        <a href="#contacts" class="btn btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+
+    <div id="img">
+      <img src="./BITMOJI.png" alt="Sarthak Jaiswal avatar" width="380" height="380" />
+    </div>
+  </section>
+  <section id="PROJECTS">
+    <div class="section-header">
+      <h2 class="section-heading">Selected Work</h2>
+      <span class="section-label">2024 – 2025</span>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card project-card--featured">
+        <div class="project-card__img-wrap">
+          <img src="./p1img.png" alt="Codeforces Rating Checker interface" width="800" height="460" loading="lazy" />
         </div>
-    </div> 
-    <div id="tech-stack"> 
-        <h1 id="stack-head" style="margin-bottom: 50px;">TECH STACK</h1> 
-        <div id="lang">
-            <div class="languages"> 
-                <img style="height: 100%;width: 100%;" src="https://i.pinimg.com/564x/b1/75/54/b175549d8268dd656b92e3b56988bdf9.jpg"> 
-            </div> 
-            <div class="languages">
-                <img style="height: 100%;width: 100%;" src="https://riteshkumarlidroid.gallerycdn.vsassets.io/extensions/riteshkumarlidroid/python-code-keeper/1.0.3/1736923015252/Microsoft.VisualStudio.Services.Icons.Default"> 
-            </div>
-            <div class="languages">
-                <img style="height: 100%;width: 100%;" src="https://cdn-icons-png.flaticon.com/256/732/732007.png"> 
-            </div> 
-            <div class="languages">
-                <img style="height: 100%;width: 100%;" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png">
-            </div> 
-            <div class="languages">
-                <img style="height: 100%;width: 100%;" src="https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-black-and-white.png">
-            </div> 
+        <div class="project-card__body">
+          <span class="project-card__tag">React · REST API · CSS</span>
+          <h3 class="project-card__title">Codeforces Rating Checker</h3>
+          <p class="project-card__desc">
+            Fetches and displays a Codeforces user's rating, rank, and profile
+            details in real time. Colour-coded by rating tier — Newbie through
+            Legendary Grandmaster.
+          </p>
+          <div class="project-card__stack">
+            <img src="https://cdn-icons-png.flaticon.com/256/732/732007.png" alt="HTML" width="28" height="28" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" width="28" height="28" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="28" height="28" />
+          </div>
+          <a href="https://codeforces-rating-fetcher.vercel.app/" target="_blank" rel="noopener" class="project-card__link">
+            View Live Site →
+          </a>
         </div>
-    </div>    
-    <div id="PROJECTS">
-        <h1 id="stack-head" style="margin-bottom: 50px;">PROJECTS</h1>   
-        <div id="lang">
-            <div class="languages hello"> 
-                <div id="photo">
-                    <img src="./p1img.png" style="margin-bottom: 40px;" alt="img"> 
-                    <h3 style="margin-bottom: 40px;">CODEFORCES RATING CHECKER</h3> 
-                    <p style="margin-bottom: 40px;">A React-based web app that fetches and displays a Codeforces user's rating, rank, and profile details with dynamic color coding.</p>
-                    <h4 style="margin-bottom: 30px;">TECH STACK USED</h4> 
-                    <div id="main-tech">
-                        <div class="project-tech-stack"> 
-                            <img style="height: 100%;width: 100%;" src="https://i.pinimg.com/564x/b1/75/54/b175549d8268dd656b92e3b56988bdf9.jpg"> 
-                        </div> 
-                        <div class="project-tech-stack">
-                            <img style="height: 100%;width: 100%;" src="https://cdn-icons-png.flaticon.com/256/732/732007.png"> 
-                        </div>  
-                        <div class="project-tech-stack">
-                            <img style="height: 100%;width: 100%;" src="https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-black-and-white.png">
-                        </div> 
-                    </div> 
-                    <h4 style="margin-bottom: 30px;"><button id="btn"><a href="https://codeforces-rating-fetcher.vercel.app/">VIEW SITE</a></button></h4> 
-                </div>
-            </div> 
-            
-    <div id="contacts">
-        <h1 id="stack-head" style="margin-bottom: 50px;">CONTACT</h1>  
-        <div id="lang">
-            <div class="languages"> 
-                <a href="mailto:sarthakj586@gmail.com"><img style="height: 100%;width: 100%;" src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png"></a> 
-            </div> 
-             <div class="languages"> 
-                <a href="https://github.com/sarthakjaiswal2006"><img style="height: 100%;width: 100%;" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"></a> 
-            </div>
-             <div class="languages"> 
-                <a href="https://www.linkedin.com/in/sarthak-jaiswal-b5524236a/"><img style="height: 100%;width: 100%;" src="https://e7.pngegg.com/pngimages/524/809/png-clipart-computer-icons-resume-linkedin-logo-job-hunting-others-blue-angle-thumbnail.png"></a> 
-            </div>  
-            
-        </div> 
-    </div>  
-    
-</body> 
-<script src="./script.js"></script>
+      </article>
+      <article class="project-card">
+        <div class="project-card__img-wrap project-card__img-wrap--placeholder">
+          <span class="placeholder-text">Coming Soon</span>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Python · CLI</span>
+          <h3 class="project-card__title">DSA Visualiser</h3>
+          <p class="project-card__desc">
+            An interactive terminal tool that animates sorting and graph
+            algorithms step by step — built to sharpen DSA intuition.
+          </p>
+          <div class="project-card__stack">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="28" height="28" />
+          </div>
+          <a href="#" class="project-card__link project-card__link--muted">
+            In Progress →
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__img-wrap project-card__img-wrap--placeholder">
+          <span class="placeholder-text">Coming Soon</span>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">React · Node.js</span>
+          <h3 class="project-card__title">Your Next Project</h3>
+          <p class="project-card__desc">
+            Slot for your next build. Replace this card with a real project
+            once it's ready to ship.
+          </p>
+          <div class="project-card__stack">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="28" height="28" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="28" height="28" />
+          </div>
+          <a href="#" class="project-card__link project-card__link--muted">
+            In Progress →
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+  <section id="tech-stack">
+    <div class="section-header">
+      <h2 class="section-heading">Tech Stack</h2>
+      <span class="section-label">Tools I work with</span>
+    </div>
+    <div id="lang">
+      <div class="languages">
+        <img src="https://i.pinimg.com/564x/b1/75/54/b175549d8268dd656b92e3b56988bdf9.jpg" alt="C++" width="56" height="56" />
+        <span class="lang-label">C++</span>
+      </div>
+      <div class="languages">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="56" height="56" />
+        <span class="lang-label">Python</span>
+      </div>
+      <div class="languages">
+        <img src="https://cdn-icons-png.flaticon.com/256/732/732007.png" alt="HTML5" width="56" height="56" />
+        <span class="lang-label">HTML</span>
+      </div>
+      <div class="languages">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="56" height="56" />
+        <span class="lang-label">CSS</span>
+      </div>
+      <div class="languages">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" width="56" height="56" />
+        <span class="lang-label">JavaScript</span>
+      </div>
+      <div class="languages">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="56" height="56" />
+        <span class="lang-label">React</span>
+      </div>
+    </div>
+  </section>
+  <section id="contacts">
+    <div class="contact-inner">
+      <p class="contact-eyebrow">Ready to build something?</p>
+      <h2 class="contact-title">Let's work<br /><em>together.</em></h2>
+      <a href="mailto:sarthakj586@gmail.com" class="btn btn-primary btn-large">
+        sarthakj586@gmail.com
+      </a>
+      <div class="contact-links">
+        <a href="https://github.com/sarthakjaiswal2006" target="_blank" rel="noopener" class="contact-social">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/sarthak-jaiswal-b5524236a/" target="_blank" rel="noopener" class="contact-social">
+          LinkedIn
+        </a>
+        <a href="mailto:sarthakj586@gmail.com" class="contact-social">
+          Gmail
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer id="site-footer">
+    <p>&copy; 2025 Sarthak Jaiswal. Built with HTML, CSS &amp; JS.</p>
+    <p class="footer-mono">No frameworks. No shortcuts. Just craft.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
 </html>

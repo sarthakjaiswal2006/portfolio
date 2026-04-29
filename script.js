@@ -1,41 +1,60 @@
-let index = 0; 
-let idx2=0; 
-const roles = ["FULL STACK DEVELOPER", "DSA ENTHUSIAST", "UI & UX"];
-const roleElement = document.getElementById("role"); 
-setInterval(()=>{ 
-    let selectedElement=roles[idx2];
-    roleElement.textContent+=selectedElement[index];
-    index++;
-    if (index==selectedElement.length+1){
-        index=0;
-        idx2+=1;  
-        roleElement.innerText=""
-    } 
-    if (idx2===3){
-        idx2=0;
+/* ─── TYPEWRITER ───────────────────────────────────────────────
+   Uses slice() — never reads beyond array length, no undefined.
+   Type → pause 1.8s → delete → next role, looping forever.
+─────────────────────────────────────────────────────────────── */
+const roles  = ["FULL STACK DEVELOPER", "DSA ENTHUSIAST", "UI / UX DESIGNER"];
+const roleEl = document.getElementById("role");
+
+let charIndex  = 0;
+let roleIndex  = 0;
+let isDeleting = false;
+let paused     = false;
+
+function tick() {
+  if (paused) return;
+
+  const word = roles[roleIndex];
+
+  if (!isDeleting) {
+    // Add one character
+    roleEl.textContent = word.slice(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === word.length) {
+      // Done typing → pause, then delete
+      paused = true;
+      setTimeout(() => {
+        paused     = false;
+        isDeleting = true;
+      }, 1800);
     }
-},150) 
-document.getElementById("change-mode").addEventListener("click",function(e){
-    e.target.classList.toggle("dark")
-    if (e.target.classList.contains("dark")){
-        document.body.style.backgroundColor="black" 
-        document.body.style.color="white"
-        let anchors=document.getElementsByClassName("anchors");
-        for(let i=0;i<anchors.length;i++){
-            anchors[i].style.color="white"
-        } 
-        document.getElementById("name").style.color="white";
-        document.getElementById("nav-bar").style.backgroundColor="black";
-        document.getElementById("change-mode").innerText="Light";
-    } else {
-        document.body.style.backgroundColor="white" 
-        document.body.style.color="black"
-        let anchors=document.getElementsByClassName("anchors");
-        for(let i=0;i<anchors.length;i++){
-            anchors[i].style.color="black"
-        } 
-        document.getElementById("name").style.color="black" 
-        document.getElementById("nav-bar").style.backgroundColor="white" 
-        document.getElementById("change-mode").innerText="Dark";
+  } else {
+    // Remove one character
+    roleEl.textContent = word.slice(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      roleIndex  = (roleIndex + 1) % roles.length;
     }
-})
+  }
+}
+
+// Typing is faster than deleting — looks more natural
+setInterval(() => {
+  if (!isDeleting) tick();
+}, 110);
+
+setInterval(() => {
+  if (isDeleting) tick();
+}, 60);
+
+
+/* ─── LIGHT / DARK TOGGLE ────────────────────────────────────── */
+const modeBtn = document.getElementById("change-mode");
+
+// Page loads in light mode (no class on body)
+modeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  modeBtn.textContent = document.body.classList.contains("dark") ? "Light" : "Dark";
+});
